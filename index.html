@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h3 class='fragment highlight-blue'>What is React and what does it do?</h3>
+					<div class="fragment">
+						<p>Presentation by Aliaksei Palityka</p>
+						<p>Rolling Scopes</p>
+						<p>Minsk, 2022</p>
+					</div>
+				</section>
+				<section>
+					<section>
+						<img class="fragment" src="https://i.imgur.com/69KpnAj.png" width="700" height="300"/> 
+						<p class="fragment">Birthday: 2011</p>
+						<p class="fragment">Father: Jordan Walke</p>
+						<p class="fragment">Place of birth: Facebook</p>
+						<p class="fragment">Inspired by: XHP(PHP Lang)</p>
+						</section>
+					<section>
+						<p class="fragment">Public release: 2013</p>
+						<p class="fragment">React Native: 2015</p>
+						<p class="fragment">Latest Version 18.2.0: June 14, 2022</p>
+					</section>
+					<section>
+						<h3 class="fragment">Applications that were built on React</h3>
+						<img class='fragment' src="https://i.imgur.com/d4mn8qD.png" width="200" height="200" />
+						<img class='fragment' src="https://i.imgur.com/ZpIt2vQ.png" width="200" height="200" />
+						<img class='fragment' src="https://i.imgur.com/kfvKtsz.png" width="200" height="200" />
+						<img class='fragment' src="https://i.imgur.com/fhRCn9G.png" width="200" height="200" />
+						<img class='fragment' src="https://i.imgur.com/EZSmBPm.png" width="1000" height="200" />
+					</section>
+				</section>
+				<section>
+					<h3 class="fragment">What it is?</h3>
+					<p class="fragment">React — is a JavaScript library for creating user interfaces</p>
+					<img class = 'fragment' src="https://i.imgur.com/t5UPu6V.png" />
+				</section>
+				<section>
+
+					<h3 class="fragment">How to start?</h3>
+					<div class="fragment">
+						<img src ='https://i.imgur.com/pzFSWfv.png' width='150' height="150"/>
+						<img src ='https://i.imgur.com/IALJ2ob.png' width='150' height="150"/>
+						<img src ='https://i.imgur.com/ePbIUom.png' width='150' height="150"/>
+					</div>
+					<pre class="fragment" ><code data-line-numbers>npx create-react-app project-name
+cd project-name
+npm start
+						</code>
+					</pre>
+				</section>
+				<section>
+					<section>
+					<h3 class="fragment">JS + HTML = JSX</h3>
+						<img class="fragment" src="https://i.imgur.com/PByfO3m.png" />
+					</section>
+					<section>
+						<h3>Example of JSX</h3>
+						<img class="fragment" src="https://i.imgur.com/N8loMVm.png" width="550" height="250">
+						<img class="fragment" src="https://i.imgur.com/cW6jnQ1.png" width="550" height="250">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Virtual DOM — Harder, Better, Faster, Stronger</h3>
+					</section>
+					<section>
+						<p class="fragment">We have copy of real DOM as JS object</p>
+						<p class="fragment">Updating Virtaul DOM</p>
+						<p class="fragment">Re-render only differences</p>
+						<img class="fragment" src="https://i.imgur.com/xk3A1rr.png" width='500' height="300"/>
+					</section>
+				</section>
+				<section>
+					<h3>Components — the bricks of React app</h3>
+				</section>
+				<section>
+					<section>
+					<p>1.Functional components</p>
+					<pre>
+	<code>function Welcome(props) {
+		return <h1>Привет, {props.name}</h1>;
+}</code></pre>
+					<p>2.Classes components</p>
+					<pre><code>class Welcome extends React.Component {
+		render() {
+		  return <h1>Привет, {this.props.name}</h1>;
+		}
+	}
+</code>
+					</pre>
+				</section>
+				<section>
+					<img src="https://i.imgur.com/pjmC0Sh.png" />
+				</section>
+				<section>
+					<p>Props</p>
+<pre><code>function Hello(props) {
+	return <div>
+			  <p>Name: {props.name}</p>
+			  <p>Age: {props.age}</p>
+			  <p>Phone number: {props.phone}</p>
+	  </div>;
+}</code></pre>
+				<p>Props represents a collection of values that are associated with a component. 
+				Thanks to these values, it is possible to create dynamic components.</p>
+				<p><b style="color:red">Props cannot be changed!</b></p>
+				</section>
+				<section>
+					<p>State</p>
+<pre><code>class Pet extends React.Component {
+		constructor(props) {
+		  super(props);
+		  this.state = {
+			  name: "Rex",
+			  species: "Dog",
+		  }
+		}
+		render() {
+		  return <div>
+			<p>I have ${this.state.species} named ${this.state.name}</p> 
+			</div>
+		}
+}
+</code></pre>
+					<p style="font-size:0.8em">State describes the internal state of the component. It is similar to props except that the state is defined within the component and is only accessible from within the component.</p>
+				</section>
+				</section>
+				<section>
+					<section>
+					<h3 class="fragment">React components lifecycle</h3>
+					<img class="fragment" src="https://cdn-media-1.freecodecamp.org/images/1*_drMYY_IEgboMS4RhvC-lQ.png">
+					</section>
+					<section>
+							<p>1.Initialization. This stage requires the developer to define properties and the initial state of the component.</p>
+					</section>
+					<section>
+						<p>2.Mounting. Mounting is the phase in which our React component mounts on the DOM</p>
+				</section>
+				<section>
+					    <p>3.Updation. In this phase, the data of the component (state & props) updates in response to user events like clicking, typing and so on. This results in the re-rendering of the component.</p>
+			</section>
+			<section>
+						<p>4.Unmounting. This is the last phase in the component lifecycle. In this phase component is detached from the DOM container.</p>
+		</section>
+				</section>
+				<section>
+					<section>
+					<h3>SPA — Single Page Application</h3>
+					<p>Update content without reloading</p>
+					<img src="https://i.imgur.com/Oz5vd4P.png" width='800' height="500"/>
+				</section>
+					<section>
+						<h3>React routing</h3>
+						<img src="https://i.imgur.com/CRap3WB.png" width="800" height="500"/>
+					</section>
+					<section>
+						Router defines a set of routes and when a request comes to the application, Router matches the request with the routes. 
+						If some route matches the request URL, then this route is chosen to process the request.
+					</section>
+					<section>
+					Switch is responsible for grouping elements of the Route. It goes through the child elements and selects the first match in the URL path.
+				</section>
+					<section>
+						<p>Each route represents a Route object. It has a number of attributes.</p>
+						<ol>
+							<li>path: the address pattern against which the requested URL will be matched</li>
+							<li>element - the component that is responsible for processing the request for this route</li>
+						</ol>
+					</section>
+					<section>
+						Link is a special component that allows to follow links without reloading the page. 
+						It updates the URL defined by the "to" attribute. Router loads the desired component - all within a single page. 
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>React Hooks</h3>
+					<img src="https://i.imgur.com/feJSirR.png" />
+					</section>
+					<section>
+						<p class="fragment fade-out">Hooks is an innovation in React 16.8 that allows you to use state without writing class components.</p>
+						<p class="fragment">Functional components - your time has come!</p>
+					</section>
+				</section>
+				<section>
+					<section>
+					<p>Example of React useState() Hook</p>
+					<pre ><code data-line-numbers="4">import React, { useState } from 'react';
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Вы кликнули {count} раз</p>
+      <button onClick='{() => setCount(count + 1)}'>
+        Нажми на меня
+      </button>
+    </div>
+  );
+}
+					</code></pre>
+				</section>
+				<section>
+					<p class="fragment">useEffect()</p>
+<pre >
+	<code class="fragment">import React, { useState, useEffect } from 'react';
+		function Example() {
+		  const [count, setCount] = useState(0);
+		  useEffect(() => {
+			   document.title = `You clicked ${count} times`;
+		  });
+		  return (
+			<div>
+			  <p>You clicked {count} times</p>
+			  <button onClick='{() => setCount(count + 1)}'>
+				Click me!
+			  </button>
+			</div>
+		  );}</code>
+</pre>
+		<p class="fragment">componentDidMount, componentDidUpdate и componentWillUnmount ==> useEffect()</p>
+				</section>
+				<section>
+					<h3 class="fragment">More Hooks</h3>
+					<ul class="fragment">
+						<li class="fragment">useRef()</li>
+						<li class="fragment">useMemo()</li>
+						<li class="fragment">useContext()</li>
+						<li class="fragment">useReducer()</li>
+						<li class="fragment">and so on...</li>
+					</ul>
+				</section>
+				</section>
+				<section>
+					<h3 class="fragment">Rules of Hooks</h3>
+					<ol>
+						<li class="fragment">Use only on top level</li>
+						<li class="fragment">Do not use in regular JS functions</li>
+					</ol>
+				</section>
+				<section>
+					<section>
+						<h3>Conclusion</h3>
+						<p>Why React is cool?</p>
+						<img src="https://i.imgur.com/87tYIrS.png" width="800" height="400"/>
+				    </section>
+					<section>
+						<h3>React pros</h3>
+						<ul>
+							<li class="fragment">Virtual DOM</li>
+							<li class="fragment">SPA</li>
+							<li class="fragment">Reusable Components</li>
+							<li class="fragment">Huge Community</li>
+							<li class="fragment">Multiplatfrom development — React Native</li>
+							<li class="fragment">Easy to learn</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Is there any cons?</h3>
+						<ul>
+							<li class="fragment">High rate of change</li>
+							<li class="fragment">Focused only on view</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h3>Thank you for watching!<h3>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
